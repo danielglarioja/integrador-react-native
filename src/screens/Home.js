@@ -1,4 +1,5 @@
 import React from 'react';
+import { Linking } from 'react-native';
 import {
   SafeAreaView,
   Dimensions,
@@ -11,6 +12,7 @@ import {
 } from 'react-native';
 
 const { height, width } = Dimensions.get('window');
+//const linktoMap = linkToMap.bin();
 
 const Home = (props) => {
 
@@ -22,6 +24,10 @@ const Home = (props) => {
         { text: "Ok", onPress: () => console.log("OK Pressed") }
       ]
     );
+  }
+
+  const linkToMap = () => {
+    Linking.openURL('https://goo.gl/maps/BpFchi3x2ZS3ZT5T8')
   }
 
   return (
@@ -63,7 +69,7 @@ const Home = (props) => {
 
             <TouchableOpacity 
               style={styles.button}
-              onPress={() => props.navigation.navigate('Map')}
+              onPress={() => linkToMap()}
               >
               <Text style={styles.text}>
                 Map
