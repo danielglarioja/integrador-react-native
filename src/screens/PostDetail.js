@@ -19,21 +19,14 @@ const width = Dimensions.get('window').width
 
 const PostDetail = (props) => {
 
-
-    const { item } = props.route.params;
-
- 
+    const { item } = props.route.params; 
 
     const delPost = () => {
         const { id } = item;
         props.delPost({ id }).then(res => {
             props.navigation.goBack();
         });
-    }
-
-    
-
-    
+    }    
 
     return (
         <SafeAreaView>
@@ -59,6 +52,19 @@ const PostDetail = (props) => {
                             {item.body}
                         </Text>
                     </View>
+                
+                <Divider />
+                <View style={styles.bodycontainer}>
+                    <Text style={styles.text}>
+                        {item.direccion}
+                    </Text>
+                </View>
+                <Divider />
+                <View style={styles.bodycontainer}>
+                    <Text style={styles.text}>
+                        {item.telefono}
+                    </Text>
+                </View>
                 </View>
                 <View style={{ flexDirection: 'row', marginVertical: 10 }} >
                     <View style={{ width: width/3, marginHorizontal: 10 }} >

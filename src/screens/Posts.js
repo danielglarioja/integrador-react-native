@@ -45,6 +45,18 @@ const Posts = (props) => {
                         {item.body}
                     </Text>
                 </View>
+                <Divider />
+                <View style={styles.bodycontainer}>
+                    <Text style={styles.text}>
+                        {item.direccion}
+                    </Text>
+                </View>
+                <Divider />
+                <View style={styles.bodycontainer}>
+                    <Text style={styles.text}>
+                        {item.telefono}
+                    </Text>
+                </View>
             </View>
         </TouchableWithoutFeedback>
     );

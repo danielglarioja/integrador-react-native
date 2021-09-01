@@ -13,8 +13,11 @@ export default (state = initialState, action) => {
         return {
             ...state,
             posts: [...state.posts, {
-                userId: 1, title: action.data.title,
-                body: action.data.body
+                userId: 1, 
+                title: action.data.title,
+                body: action.data.body,
+                direccion: action.data.direccion,
+                telefono: action.data.telefono
             }],
         };
     }

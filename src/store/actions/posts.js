@@ -39,11 +39,11 @@ export const getPosts = () => (dispatch) => {
 }
 
 export const createPost = (data) => (dispatch) => {
-    const { title, body } = data;
+    const { title, body, direccion, telefono } = data;
     return postPosts(data)
         .then(([response, json]) => {
             if (response.ok === true) {
-                dispatch(createPostSuceess({ title, body }));
+                dispatch(createPostSuceess({ title, body, direccion, telefono }));
             }
             return json;
         })

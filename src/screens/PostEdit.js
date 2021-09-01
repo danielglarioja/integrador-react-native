@@ -17,18 +17,22 @@ const PostEdit = (props) => {
     const { item } = props.route.params;
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
+    const [direccion, setDireccion] = useState('');
+    const [telefono, setTelefono] = useState('');
 
     useEffect(() => {
         if (item) {
             setTitle(item.title);
             setBody(item.body);
+            setDireccion(item.direccion);
+            setTelefono(item.telefono);
         }
     }, [item]);
 
     const update = () => {
         ///VALIDATIONS
         const { id } = item;
-        props.updatePost({ title, body, id }).then(() => {
+        props.updatePost({ title, body, direccion, telefono, id }).then(() => {
             props.navigation.popToTop();
         });
     }
@@ -39,7 +43,7 @@ const PostEdit = (props) => {
                 source={require('../assets/images/fondo6.jpg')}
             >
                 <Input
-                    placeholder='Titulo'
+                    placeholder='Restaurant'
                     inputContainerStyle={{
                         width: width * 0.8, alignItems: 'flex-start',
                         alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.5)', pading: 15
@@ -50,18 +54,40 @@ const PostEdit = (props) => {
                     onChangeText={(value) => setTitle(value)}
                 />
                 <Input
-                    placeholder='Descripcion'
+                    placeholder='Tipo de Cocina'
                     inputContainerStyle={{
                         width: width * 0.8, alignItems: 'flex-start',
-                        alignSelf: 'center', height: height * 0.4, backgroundColor: 'rgba(0,0,0,0.5)',
+                        alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.5)',
                         pading: 15
                     }}
                     inputStyle={{ color: 'white', marginLeft: 15 }}
                     placeholderTextColor='#ccc'
                     value={body}
                     onChangeText={(value) => setBody(value)}
-                    multiline
-                    numberOfLines={2}
+                />
+                <Input
+                    placeholder='Direccion'
+                    inputContainerStyle={{
+                        width: width * 0.8, alignItems: 'flex-start',
+                        alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.5)',
+                        pading: 15
+                    }}
+                    inputStyle={{ color: 'white', marginLeft: 15 }}
+                    placeholderTextColor='#ccc'
+                    value={direccion}
+                    onChangeText={(value) => setDireccion(value)}
+                />
+                <Input
+                    placeholder='Telefono'
+                    inputContainerStyle={{
+                        width: width * 0.8, alignItems: 'flex-start',
+                        alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.5)',
+                        pading: 15
+                    }}
+                    inputStyle={{ color: 'white', marginLeft: 15 }}
+                    placeholderTextColor='#ccc'
+                    value={telefono}
+                    onChangeText={(value) => setTelefono(value)}
                 />
                 <Button title='Guardar' onPress={() => update()}
                     style={{ width: width * 0.8 }} />
