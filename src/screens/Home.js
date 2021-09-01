@@ -63,7 +63,7 @@ const Home = (props) => {
               onPress={() => props.navigation.navigate('Posts')}
               >
               <Text style={styles.text}>
-                Posts
+                Restaurants
               </Text>
             </TouchableOpacity>
 
@@ -72,7 +72,7 @@ const Home = (props) => {
               onPress={() => linkToMap()}
               >
               <Text style={styles.text}>
-                Map
+                GuiaMap
               </Text>
             </TouchableOpacity>
           </View>
@@ -85,15 +85,15 @@ const Home = (props) => {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 25,
+    fontSize: 23,
     fontWeight: 'bold',
     color: '#fff',
     textAlign: 'center'
   },
   button: {
-    margin: width / 25,
+    margin: width / 30,
     height: width / 3.5,
-    width: width / 2.5,
+    width: width / 2.3,
     borderRadius: 10,
     justifyContent: 'center',
     backgroundColor: 'rgba(28, 89, 96, .7)',

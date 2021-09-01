@@ -23,7 +23,7 @@ const PostCreate = (props) => {
         ///VALIDACIONES
         props.createPost({ title, body, direccion, telefono }).then(() => {
             if(title){
-                Alert.alert("successful")
+                Alert.alert("Restaurant creado")
             }
             props.navigation.goBack()
         })

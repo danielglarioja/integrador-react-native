@@ -75,7 +75,7 @@ const Posts = (props) => {
                         source={require('../assets/images/fondo6.jpg')}
                     >
                         <View style={{ flex: 1 }}>
-                            <Button title='Crear un nuevo Post'
+                            <Button title='Agregar Restaurant'
                                 onPress={() => props.navigation.navigate('PostCreate')} />
                             <FlatList
                                 style={{ marginBottom: 50 }}

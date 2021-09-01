@@ -11,7 +11,7 @@ export const HomeStackScreen = () => {
             name="Home" 
             component={Home} 
             options={{
-                title: 'Home',
+                title: 'RESTAURANTS - LA RIOJA',
                 headerStyle: {
                     backgroundColor: `rgba( 19, 25, 29, .8)`,
                 },

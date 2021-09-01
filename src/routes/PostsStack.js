@@ -14,7 +14,7 @@ export const PostsStackScreen = () => {
             name="Posts"
             component={Posts} 
             options={{
-                title: 'Post',
+                title: 'Lista de Restaurants',
                 headerStyle: {
                     backgroundColor: `rgba( 19, 25, 29, .8)`,
                 },
@@ -28,7 +28,7 @@ export const PostsStackScreen = () => {
                 name="PostDetail"
                 component={PostDetail}
                 options={{
-                    title: 'Post Detail',
+                    title: 'regresar',
                     headerTintColor: 'rgb(118, 177, 195)',
                     headerTitleStyle: {
                         fontWeight: 'bold',
@@ -40,7 +40,7 @@ export const PostsStackScreen = () => {
                 name="PostEdit"
                 component={PostEdit}
                 options={{
-                    title: 'Post Edit',
+                    title: 'regresar',
                     headerTintColor: 'rgb(118, 177, 195)',
                     headerTitleStyle: {
                         fontWeight: 'bold',
@@ -52,7 +52,7 @@ export const PostsStackScreen = () => {
                 name="PostCreate"
                 component={PostCreate}
                 options={{
-                    title: 'Post Create',
+                    title: 'regresar',
                     headerTintColor: 'rgb(118, 177, 195)',
                     headerTitleStyle: {
                         fontWeight: 'bold',
