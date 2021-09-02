@@ -4,6 +4,7 @@ import {
     ImageBackground,
     Dimensions,
     StyleSheet,
+    Image,
 } from 'react-native';
 import { Input, Button } from 'react-native-elements';
 import { connect } from 'react-redux';
@@ -17,6 +18,7 @@ const PostEdit = (props) => {
     const { item } = props.route.params;
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
+    const [url, setUrl] = useState('');
     const [direccion, setDireccion] = useState('');
     const [telefono, setTelefono] = useState('');
 
@@ -24,6 +26,7 @@ const PostEdit = (props) => {
         if (item) {
             setTitle(item.title);
             setBody(item.body);
+            setUrl(item.url);
             setDireccion(item.direccion);
             setTelefono(item.telefono);
         }
@@ -32,7 +35,7 @@ const PostEdit = (props) => {
     const update = () => {
         ///VALIDATIONS
         const { id } = item;
-        props.updatePost({ title, body, direccion, telefono, id }).then(() => {
+        props.updatePost({ title, body, url, direccion, telefono, id }).then(() => {
             props.navigation.popToTop();
         });
     }
@@ -58,12 +61,24 @@ const PostEdit = (props) => {
                     inputContainerStyle={{
                         width: width * 0.8, alignItems: 'flex-start',
                         alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.5)',
-                        pading: 15
+                        pading: 10
                     }}
                     inputStyle={{ color: 'white', marginLeft: 15 }}
                     placeholderTextColor='#ccc'
                     value={body}
                     onChangeText={(value) => setBody(value)}
+                />
+                <Input
+                    placeholder='URL Imagen'
+                    inputContainerStyle={{
+                        width: width * 0.8, alignItems: 'flex-start',
+                        alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.5)',
+                        pading: 15
+                    }}
+                    inputStyle={{ color: 'white', marginLeft: 15 }}
+                    placeholderTextColor='#ccc'
+                    value={url}
+                    onChangeText={(value) => setUrl(value)}
                 />
                 <Input
                     placeholder='Direccion'
@@ -98,13 +113,12 @@ const PostEdit = (props) => {
 
 const styles = StyleSheet.create({
     text: {
-        fontSize: 30,
+        fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center'
     },
     content: {
-        height,
-        width,
+        height: 400,
         borderRadius: 15,
         justifyContent: 'center',
         alignItems: 'center'

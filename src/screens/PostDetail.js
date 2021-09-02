@@ -6,10 +6,10 @@ import {
     Text,
     Dimensions,
     StyleSheet,
+    Image,
     ActivityIndicator,
     FlatList,
 } from 'react-native';
-//import { fetchComments } from '../api';
 import { connect } from 'react-redux';
 import { actions } from '../store';
 import { Divider, Button } from 'react-native-elements';
@@ -38,7 +38,7 @@ const PostDetail = (props) => {
                 source={require('../assets/images/fondo6.jpg')}
             >
                 <View style={{
-                    marginTop: height/8, backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: 8,
+                    marginTop: height/12, backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: 8,
                     padding: 5,
                 }}>
                     <View style={styles.titlecontainer}>
@@ -51,6 +51,11 @@ const PostDetail = (props) => {
                         <Text style={styles.text}>
                             {item.body}
                         </Text>
+                    </View>
+                    <Divider />
+                    <View style={styles.bodycontainer}>
+                        <Image style={{ width: 200, height: 100 }}
+                            source={{ uri: `${item.url}` }} />
                     </View>
                 
                 <Divider />

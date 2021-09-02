@@ -16,6 +16,7 @@ export default (state = initialState, action) => {
                 userId: 1, 
                 title: action.data.title,
                 body: action.data.body,
+                url: action.data.url,
                 direccion: action.data.direccion,
                 telefono: action.data.telefono
             }],

@@ -7,7 +7,8 @@ import {
     ActivityIndicator,
     FlatList,
     View,
-    ImageBackground
+    ImageBackground,
+    Image,
 } from 'react-native';
 import { Button, Divider } from 'react-native-elements';
 import { actions } from '../store';
@@ -47,16 +48,11 @@ const Posts = (props) => {
                 </View>
                 <Divider />
                 <View style={styles.bodycontainer}>
-                    <Text style={styles.text}>
-                        {item.direccion}
-                    </Text>
+                    <Image style={{ alignSelf: "center", width: 220, height: 150 }}
+                        source={{ uri: `${item.url}` }} />
                 </View>
                 <Divider />
-                <View style={styles.bodycontainer}>
-                    <Text style={styles.text}>
-                        {item.telefono}
-                    </Text>
-                </View>
+           
             </View>
         </TouchableWithoutFeedback>
     );

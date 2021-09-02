@@ -5,6 +5,7 @@ import {
     StyleSheet,
     ImageBackground,
     Alert,
+    Image
 } from 'react-native';
 import { Input, Button } from 'react-native-elements'
 import { connect } from 'react-redux'
@@ -15,13 +16,14 @@ const width = Dimensions.get('window').width
 const PostCreate = (props) => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
+    const [url, setUrl] = useState('');
     const [direccion, setDireccion] = useState('');
-    const [telefono, setTelefono] = useState('');
+    const [telefono, setTelefono] = useState('');    
 
     const send = () => {
         
         ///VALIDACIONES
-        props.createPost({ title, body, direccion, telefono }).then(() => {
+        props.createPost({ title, body, url, direccion, telefono }).then(() => {
             if(title){
                 Alert.alert("Restaurant creado")
             }
@@ -57,6 +59,18 @@ const PostCreate = (props) => {
                         placeholderTextColor='#ccc'
                         value={body}
                         onChangeText={(value) =>setBody(value)}
+                    />
+                    <Input
+                        placeholder='URL Imagen'
+                        inputContainerStyle={{
+                            width: width * 0.8, alignItems: 'flex-start',
+                            alignSelf: 'center', backgroundColor: 'rgba(0,0,0,0.5)',
+                            pading: 15
+                        }}
+                        inputStyle={{ color: 'white', marginLeft: 15 }}
+                        placeholderTextColor='#ccc'
+                        value={url}
+                        onChangeText={(value) => setUrl(value)}
                     />
                     <Input
                         placeholder='Direccion'
@@ -98,7 +112,7 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     content: {
-        height,
+        height: 400,
         width,
         borderRadius: 15,
         justifyContent: 'center',

@@ -43,7 +43,7 @@ export const createPost = (data) => (dispatch) => {
     return postPosts(data)
         .then(([response, json]) => {
             if (response.ok === true) {
-                dispatch(createPostSuceess({ title, body, direccion, telefono }));
+                dispatch(createPostSuceess({ title, body, url, direccion, telefono }));
             }
             return json;
         })
