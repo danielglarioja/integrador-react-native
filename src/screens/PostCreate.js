@@ -27,7 +27,7 @@ const PostCreate = (props) => {
             if(title){
                 Alert.alert("Restaurant creado")
             }else{
-                Alert.alert("Ocurrio algun error")
+                Alert.alert("Campo Titulo obligatorio")
             }
             props.navigation.goBack()
         })
