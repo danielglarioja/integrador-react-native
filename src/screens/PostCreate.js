@@ -26,6 +26,8 @@ const PostCreate = (props) => {
         props.createPost({ title, body, url, direccion, telefono }).then(() => {
             if(title){
                 Alert.alert("Restaurant creado")
+            }else{
+                Alert.alert("Ocurrio algun error")
             }
             props.navigation.goBack()
         })

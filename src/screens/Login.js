@@ -47,7 +47,7 @@ const Login = (props) => {
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}
-                source={require('../assets/images/fondo6.jpg')}
+                source={require('../assets/images/fondo6-1.jpg')}
             >
                 <GoogleSigninButton
                     style={{ width: 180, height: 65 }}

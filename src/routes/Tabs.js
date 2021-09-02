@@ -43,13 +43,7 @@ export const Tabs = () => {
                     ),
                 }}
             />
-            <Tab.Screen name="Map" component={MapStackScreen}
-                options={{
-                    tabBarIcon: ({ color }) => (
-                        <Icon name={'map'} type="font-awesome-5" size={20} color={color} />
-                    ),
-                }}
-            />
+
         </Tab.Navigator>
     );
 }
